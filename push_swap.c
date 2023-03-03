@@ -10,7 +10,10 @@ int main(int argc, char **argv)
     {
         args = ft_split(argv[1], ' ');
         if (ft_check_errors(args, 0))
+        {
+            ft_free(args);
             return (-1);
+        }
         ft_free(args);
     }
     if (argc > 2)

@@ -37,8 +37,8 @@ int    ft_check_errors(char **args, int i)
 {
     while (args[i])
    {
-        if (!ft_isnum(args[i]) || ft_iscontained(ft_atoi(args[i]), args, i) || 
-        !ft_isinteger(ft_atoi(args[i])))
+        if (!ft_isnum(args[i]) || !ft_isinteger(ft_atoi(args[i])) || 
+        ft_iscontained(ft_atoi(args[i]), args, i))
         {
             ft_putstr_fd("Error\n", 1); 
             return (1);         
