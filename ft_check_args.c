@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_errors.c                                  :+:      :+:    :+:   */
+/*   ft_check_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:37:23 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/14 11:44:24 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:55:52 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,40 +47,30 @@ int	ft_isinteger(int nb)
 
 int	ft_check_errors(char **args, int i)
 {
-    while (args[i])
-   {
+	while (args[i])
+   	{
         if (!ft_isnum(args[i]) || !ft_isinteger(ft_atoi(args[i])) || 
         ft_iscontained(ft_atoi(args[i]), args, i))
         {
             ft_putstr_fd("Error\n", 1); 
-            return (1);         
+            return (-1);         
         }
         i++;
-   } 
-   return (0);
+   	} 
+   	return (0);
 }
 
-int	ft_check_args(int argc, char **argv)
+char	**ft_check_args(int argc, char **argv)
 {
 	char	**args;
 
-	if (argc < 2)
-		return (-1);
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
-		if (ft_check_errors(args, 0))
-		{
-			ft_free(args);
-			return (-1);
-		}
-		ft_free(args);
 	}
 	if (argc > 2)
 	{
 		args = argv;
-		if (ft_check_errors(args, 1))
-			return (-1);
 	}
-	return (0);
+	return (args);
 }
