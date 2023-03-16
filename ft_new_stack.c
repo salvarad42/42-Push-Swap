@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:31:38 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/14 12:56:10 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:49:28 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,4 @@ static void	ft_new_stack(t_list **stack, int argc, char **argv)
 	int		i;
 
 	i = 0;
-
+}
