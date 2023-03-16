@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 10:52:43 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/14 11:01:00 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/16 11:15:21 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	int				value;
+	int				content;
 	int				index;
 	struct s_list	*next;
 }	t_list;

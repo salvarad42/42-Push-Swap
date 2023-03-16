@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:02:27 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/16 11:03:12 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/16 11:24:34 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	t_list	**stack_a;
-	t_list	**stack_b;
 	char	**args;
+	t_list	**stack_a;
 
-	**stack_a = NULL;
-	**stack_b = NULL;
+	stack_a = NULL;
 	if (argc < 2)
 		return (-1);
 	args = ft_check_args(argc, argv);
 	if (argc == 2)
 	{
 		ft_check_errors(args, 1);
-		ft_new_stack(**stack_a, args);
+		ft_new_stack(stack_a, args);
 		ft_free(args);
 	}
 	else
 	{
 		ft_check_errors(args, 0);
-		ft_new_stack(**stack_a, args);
+		ft_new_stack(stack_a, args);
 	}
 	return (0);
 }
