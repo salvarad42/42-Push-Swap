@@ -24,10 +24,10 @@ void    ft_index_stack(t_list **stack)
     int     index;
 
     index = 0;
-    aux = ft_min_value(stack);
+    aux = ft_next_min(stack);
     while (aux)
     {
         aux -> index = index++;
-        aux = ft_min_value(stack);
+        aux = ft_next_min(stack);
     }
 }
