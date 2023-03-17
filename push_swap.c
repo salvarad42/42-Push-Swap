@@ -24,13 +24,13 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		ft_check_errors(args, 1);
-		ft_new_stack(stack_a, args);
+		ft_make_stack(stack_a, args);
 		ft_free(args);
 	}
 	else
 	{
 		ft_check_errors(args, 0);
-		ft_new_stack(stack_a, args);
+		ft_make_stack(stack_a, args);
 	}
 	return (0);
 }

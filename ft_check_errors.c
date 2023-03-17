@@ -53,7 +53,7 @@ int	ft_check_errors(char **args, int i)
 			|| ft_iscontained(ft_atoi(args[i]), args, i))
 		{
 			ft_putstr_fd("Error\n", 1);
-			return (-1);
+			exit ();
 		}
 		i++;
 	}
