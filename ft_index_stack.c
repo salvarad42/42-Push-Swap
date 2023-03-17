@@ -15,7 +15,7 @@ static t_list   *ft_next_min(t_list **stack)
             min = aux;
         aux = aux -> next;
     }
-
+    return (min);
 }
 
 void    ft_index_stack(t_list **stack)
