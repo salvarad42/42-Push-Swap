@@ -12,41 +12,37 @@
 
 #include "push_swap.h"
 
-void	push_swap(int argc, char **args, t_list **stack_a, t_list **stack_b)
+void	push_swap(int argc, char **args, t_list **stack)
 {
-
 	if (argc == 2)
 	{
 		ft_check_errors(args, 1);
-		ft_make_stack(stack_a, args);
+		ft_make_stack(stack, args);
 		ft_free_args(args);
 	}
 	else
 	{
 		ft_check_errors(args, 0);
-		ft_make_stack(stack_a, args);
+		ft_make_stack(stack, args);
 	}
-	if (ft_is_sorted(stack_a))
+	if (ft_is_sorted(stack))
 	{
-		ft_free_stack(stack_a);
+		ft_free_stack(stack);
 		exit (0);
 	}
-	ft_sort_stack(stack_a, stack_b);
+	ft_sort_stack(stack);
 }
 
 int	main(int argc, char **argv)
 {
 	char	**args;
-	t_list	**stack_a;
-	t_list	**stack_b;
+	t_list	**stack;
 
-	stack_a = NULL;
-	stack_b = NULL;
+	stack = NULL;
 	if (argc < 2)
 		return (-1);
 	args = ft_check_args(argc, argv);
-	push_swap(argc, args, stack_a, stack_b);
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
+	push_swap(argc, args, stack);
+	ft_free_stack(stack);
 	return (0);
 }
