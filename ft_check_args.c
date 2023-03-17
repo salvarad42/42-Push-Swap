@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 char	**ft_check_args(int argc, char **argv)
 {
 	char	**args;

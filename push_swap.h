@@ -13,8 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include "../libft/libft.h"
 
 typedef struct s_list
@@ -23,3 +21,9 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }	t_list;
+
+char		**ft_check_args(int argc, char **argv);
+int			ft_check_errors(char **args, int i);
+void		ft_free(char **array);
+void		ft_index_stack(t_list **stack);
+static void	ft_make_stack(t_list **stack, char *args);

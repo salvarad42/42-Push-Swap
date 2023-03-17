@@ -45,7 +45,8 @@ void	ft_lstadd_back(t_list **stack, t_list *new_stack)
 		aux -> next = new_stack;
 	}
 }
-static void	ft_new_stack(t_list **stack, char **args)
+
+static void	ft_make_stack(t_list **stack, char **args)
 {
 	t_list	*new_stack;
 	char	**args;
@@ -58,4 +59,5 @@ static void	ft_new_stack(t_list **stack, char **args)
 		ft_lstadd_back(stack, new_stack);
 		i++;
 	}
+	ft_index_stack(stack);
 }
