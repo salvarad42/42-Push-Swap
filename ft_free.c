@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_free(char **array)
+#include "push_swap.h"
+
+void	ft_free_args(char **array)
 {
 	int	i;
 
@@ -23,4 +25,16 @@ void	ft_free(char **array)
 		i++;
 	}
 	free (array);
+}
+void	ft_free_stack(t_list **stack)
+{
+	t_list	*aux;
+
+	while (*stack)
+	{
+		aux = *stack;
+		*stack = *stack -> next;
+		free (aux);
+	}
+	free (stack);
 }
