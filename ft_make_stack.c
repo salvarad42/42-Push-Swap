@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_stack.c                                     :+:      :+:    :+:   */
+/*   ft_make_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:31:38 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/16 11:24:20 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:51:00 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(int value)
 {
-	t_list *new_stack;
+	t_list	*new_stack;
 
 	new_stack = (t_list *) malloc(sizeof(t_list));
 	if (!new_stack)
