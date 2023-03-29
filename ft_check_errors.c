@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:37:23 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/16 10:44:51 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:39:17 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isnum(char *num)
 	i = 0;
 	if (num[0] == '-')
 		i++;
-	while (num[i] != '\0')
+	while (num[i])
 	{
 		if (!ft_isdigit(num[i]))
 			return (0);
@@ -31,7 +31,7 @@ int	ft_isnum(char *num)
 int	ft_iscontained(int num, char **args, int i)
 {
 	i++;
-	while (args[i] != '\0')
+	while (args[i])
 	{
 		if (ft_atoi(args[i]) == num)
 			return (1);

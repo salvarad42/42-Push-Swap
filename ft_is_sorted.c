@@ -6,17 +6,17 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:46:00 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/27 16:46:53 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:32:02 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_is_sorted(t_list **stack)
+void	ft_is_sorted(t_list *stack)
 {
 	t_list	*aux;
 
-	aux = *stack;
+	aux = stack;
 	while (aux && aux -> next)
 	{
 		if (aux -> value > aux -> next -> value)
