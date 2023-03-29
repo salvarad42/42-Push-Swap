@@ -6,13 +6,13 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:02:27 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/16 11:24:34 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:10:57 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(int argc, char **args, t_list **stack)
+void	push_swap(int argc, char **args, t_list *stack)
 {
 	if (argc == 2)
 	{
@@ -36,7 +36,7 @@ void	push_swap(int argc, char **args, t_list **stack)
 int	main(int argc, char **argv)
 {
 	char	**args;
-	t_list	**stack;
+	t_list	*stack;
 
 	stack = NULL;
 	if (argc < 2)
