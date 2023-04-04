@@ -14,14 +14,14 @@
 
 int	ft_rotate(t_list *stack)
 {
-	t_list	*last;
+	t_list	*aux;
 
 	if (ft_lstsize(stack) < 2)
 		return (-1);
-	last = ft_lstlast(stack);
-	last -> next = stack;
+	aux = stack;
+	aux -> next = NULL;
 	stack = stack -> next;
-	stack -> next = NULL;
+	ft_lstadd_back(stack, aux);
 	return (0);
 }
 

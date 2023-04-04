@@ -2,18 +2,20 @@
 
 int ft_reverse(t_list *stack)
 {
+    t_list  *aux;
     t_list  *last;
 
-    if (ft_lstlast(stack) < 2)
+    if (ft_lstsize(stack) < 2)
         return (-1);
     last = ft_lstlast(stack);
-    while (stack)
+    aux = stack;
+    while (aux)
     {
-        if (stack -> next -> next == NULL)
+        if (aux -> next -> next == NULL)
         {
-            stack -> next = NULL;
+            aux -> next = NULL;
         }
-        stack = stack -> next;
+        aux = aux -> next;
     }
     last -> next = stack;
     stack = last;
