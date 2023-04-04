@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-int	ft_rotate(t_list **stack)
+int	ft_rotate(t_list *stack)
 {
 	t_list	*last;
 
-	if (ft_lstsize(*stack) < 2)
+	if (ft_lstsize(stack) < 2)
 		return (-1);
-	last = ft_lstlast(*stack);
-	last -> next = *stack;
-	*stack = *stack -> next;
-	*stack -> next = NULL;
+	last = ft_lstlast(stack);
+	last -> next = stack;
+	stack = stack -> next;
+	stack -> next = NULL;
 	return (0);
 }
 
-int	ra(t_list **stack_a)
+int	ra(t_list *stack_a)
 {
 	if (ft_rotate(stack_a) == -1)
 		return (-1);
@@ -33,7 +33,7 @@ int	ra(t_list **stack_a)
 	return (0);
 }
 
-int	rb(t_list **stack_b)
+int	rb(t_list *stack_b)
 {
 	if (ft_rotate(stack_b) == -1)
 		return (-1);
@@ -41,9 +41,9 @@ int	rb(t_list **stack_b)
 	return (0);
 }
 
-int	rr(t_list **stack_a, t_list **stack_b)
+int	rr(t_list *stack_a, t_list *stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((ft_lstsize(stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);

@@ -12,23 +12,23 @@
 
 #include "push_swap.h"
 
-int	ft_swap(t_list **stack)
+int	ft_swap(t_list *stack)
 {
 	int	aux_value;
 	int	aux_index;
 
-	if (ft_lstsize(*stack) < 2)
+	if (ft_lstsize(stack) < 2)
 		return (-1);
-	aux_value = *stack -> value;
-	aux_index = *stack -> index;
-	*stack -> value = *stack -> next -> value;
-	*stack -> index = *stack -> next -> index;
-	*stack -> next -> value = aux_value;
-	*stack -> next -> index = aux_index;
+	aux_value = stack -> value;
+	aux_index = stack -> index;
+	stack -> value = stack -> next -> value;
+	stack -> index = stack -> next -> index;
+	stack -> next -> value = aux_value;
+	stack -> next -> index = aux_index;
 	return (0);
 }
 
-int	sa(t_list **stack_a)
+int	sa(t_list *stack_a)
 {
 	if (ft_swap(stack_a) == -1)
 		return (-1);
@@ -36,7 +36,7 @@ int	sa(t_list **stack_a)
 	return (0);
 }
 
-int	sb(t_list **stack_b)
+int	sb(t_list *stack_b)
 {
 	if (ft_swap(stack_b) == -1)
 		return (-1);
@@ -44,9 +44,9 @@ int	sb(t_list **stack_b)
 	return (0);
 }
 
-int	ss(t_list **stack_a, t_list **stack_b)
+int	ss(t_list *stack_a, t_list **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((ft_lstsize(stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);
 	ft_swap(stack_a);
 	ft_swap(stack_b);
