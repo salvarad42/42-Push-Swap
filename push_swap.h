@@ -24,7 +24,26 @@ typedef struct s_list
 
 char		**ft_check_args(int argc, char **argv);
 int			ft_check_errors(char **args, int i);
-void		ft_free(char **array);
+void		ft_free_args(char **array);
+void		ft_free_stack(t_list *stack);
 void		ft_index_stack(t_list *stack);
-static void	ft_make_stack(t_list *stack, char *args);
 void		ft_is_sorted(t_list *stack);
+static void	ft_make_stack(t_list *stack, char *args);
+t_list		*ft_lstlast(t_list *stack);
+void		ft_lstadd_back(t_list *stack, t_list *new_stack);
+int			ft_lstsize(t_list *stack);
+int			ft_push(t_list *stack_dst, t_list *stack_src);
+int			pa(t_list *stack_a, t_list *stack_b);
+int			pb(t_list *stack_a, t_list *stack_b);
+int			ft_reverse(t_list *stack);
+int			rra(t_list *stack_a);
+int			rrb(t_list *stack_b);
+int			rrr(t_list *stack_a, t_list *stack_b);
+int			ft_rotate(t_list *stack);
+int			ra(t_list *stack_a);
+int			rb(t_list *stack_b);
+int			rr(t_list *stack_a, t_list *stack_b);
+int			ft_swap(t_list *stack);
+int			sa(t_list *stack_a);
+int			sb(t_list *stack_b);
+int			ss(t_list *stack_a, t_list *stack_b);
