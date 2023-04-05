@@ -21,7 +21,7 @@ static t_list	*ft_next_min(t_list *stack)
 		return (NULL);
 	aux = stack;
 	min = aux;
-	while (aux != NULL)
+	while (aux)
 	{
 		if ((aux -> index == -1) && (aux -> value < min -> value))
 			min = aux;
