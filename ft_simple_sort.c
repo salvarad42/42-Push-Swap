@@ -52,7 +52,7 @@ void    ft_sort_4(t_list *stack_a, t_list *stack_b)
     int     min;
 
     min = ft_get_min(stack_a);
-    aux = stack;
+    aux = stack_a;
     if (aux -> next -> index == min)
         sa (stack_a);
     else if (aux -> next -> next -> index == min)
@@ -75,7 +75,7 @@ void    ft_sort_5(t_list *stack_a, t_list *stack_b)
     int     min;
     
     min = ft_get_min(stack_a);
-    aux = stack;
+    aux = stack_a;
     if (aux -> next -> index == min)
         sa(stack_a);
     else if (aux -> next -> next -> index == min)
