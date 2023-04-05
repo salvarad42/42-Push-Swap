@@ -12,11 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_simple_sort(t_list *stack_a, t_list *stack_b)
-{
-    
-}
-
 int	ft_lstsize(t_list *stack)
 {
 	int		i;
