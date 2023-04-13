@@ -1,52 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 16:55:38 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/27 16:59:33 by salvarad         ###   ########.fr       */
+/*   Created: 2023/03/27 16:51:24 by salvarad          #+#    #+#             */
+/*   Updated: 2023/03/27 16:55:02 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_rotate(t_list *stack)
+int	ft_push(t_list **stack_dst, t_list **stack_src)
 {
 	t_list	*aux;
 
-	if (ft_lstsize(stack) < 2)
+	if (ft_lstsize(*stack_src) == 0)
 		return (-1);
-	aux = stack;
-	aux -> next = NULL;
-	stack = stack -> next;
-	ft_lstadd_back(stack, aux);
+	aux = *stack_src;
+	if (!stack_dst)
+	{
+		*stack_dst = aux;
+		(*stack_dst) -> next = NULL;
+	}
+	else
+	{
+		aux -> next = *stack_dst;
+		*stack_dst = aux;
+	}
 	return (0);
 }
 
-int	ra(t_list *stack_a)
+int	pa(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_rotate(stack_a) == -1)
+	if (ft_push(stack_a, stack_b) == -1)
 		return (-1);
-	ft_putendl_dl("ra", 1);
+	ft_putendl_fd("pa", 1);
 	return (0);
 }
 
-int	rb(t_list *stack_b)
+int	pb(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_rotate(stack_b) == -1)
+	if (ft_push(stack_b, stack_a) == -1)
 		return (-1);
-	ft_putendl_dl("rb", 1);
-	return (0);
-}
-
-int	rr(t_list *stack_a, t_list *stack_b)
-{
-	if ((ft_lstsize(stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
-		return (-1);
-	ft_rotate(stack_a);
-	ft_rotate(stack_b);
-	ft_putendl_dl("rr", 1);
+	ft_putendl_fd("pb", 1);
 	return (0);
 }

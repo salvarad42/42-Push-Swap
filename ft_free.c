@@ -19,7 +19,7 @@ void	ft_free_args(char **array)
 	i = 0;
 	if (!array)
 		return ;
-	while (array[i] != '\0')
+	while (array[i])
 	{
 		free(array[i]);
 		i++;
@@ -31,7 +31,7 @@ void	ft_free_stack(t_list *stack)
 {
 	t_list	*aux;
 
-	while (stack != NULL)
+	while (stack)
 	{
 		aux = stack;
 		stack = stack -> next;

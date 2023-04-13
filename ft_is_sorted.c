@@ -12,16 +12,13 @@
 
 #include "push_swap.h"
 
-void	ft_is_sorted(t_list *stack)
+int	ft_is_sorted(t_list *stack)
 {
-	t_list	*aux;
-
-	aux = stack;
-	while (aux && aux -> next)
+	while (stack && stack -> next)
 	{
-		if (aux -> value > aux -> next -> value)
+		if (stack -> value > stack -> next -> value)
 			return (0);
-		aux = aux -> next;
+		stack = stack -> next;
 	}
 	return (1);
 }

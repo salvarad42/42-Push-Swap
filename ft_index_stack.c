@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static t_list	*ft_next_min(t_list *stack)
+t_list	*ft_next_min(t_list *stack)
 {
 	t_list	*aux;
 	t_list	*min;
@@ -20,10 +20,10 @@ static t_list	*ft_next_min(t_list *stack)
 	if (!stack)
 		return (NULL);
 	aux = stack;
-	min = aux;
+	min = NULL;
 	while (aux)
 	{
-		if ((aux -> index == -1) && (aux -> value < min -> value))
+		if ((aux -> index == -1) && (!min || aux -> value < min -> value))
 			min = aux;
 		aux = aux -> next;
 	}

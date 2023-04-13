@@ -17,7 +17,7 @@ char	**ft_check_args(int argc, char **argv)
 	char	**args;
 
 	if (argc == 2)
-		args = ft_split(argv[1], ' ');
+		args = ft_split(argv[0], ' ');
 	if (argc > 2)
 		args = argv;
 	return (args);

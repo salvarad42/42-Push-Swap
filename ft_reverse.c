@@ -1,14 +1,14 @@
 #include "push_swap.h"
 
-int ft_reverse(t_list *stack)
+int ft_reverse(t_list **stack)
 {
     t_list  *aux;
     t_list  *last;
 
-    if (ft_lstsize(stack) < 2)
+    if (ft_lstsize(*stack) < 2)
         return (-1);
-    last = ft_lstlast(stack);
-    aux = stack;
+    last = ft_lstlast(*stack);
+    aux = *stack;
     while (aux)
     {
         if (aux -> next -> next == NULL)
@@ -17,12 +17,12 @@ int ft_reverse(t_list *stack)
         }
         aux = aux -> next;
     }
-    last -> next = stack;
-    stack = last;
+    last -> next = *stack;
+    *stack = last;
     return (0);
 }
 
-int rra(t_list *stack_a)
+int rra(t_list **stack_a)
 {
     if (ft_reverse(stack_a) == -1)
         return (-1);
@@ -30,7 +30,7 @@ int rra(t_list *stack_a)
     return (0);
 }
 
-int rrb(t_list *stack_b)
+int rrb(t_list **stack_b)
 {
     if (ft_reverse(stack_b) == -1)
         return (-1);
@@ -38,9 +38,9 @@ int rrb(t_list *stack_b)
     return (0);
 }
 
-int rrr(t_list *stack_a, t_list *stack_b)
+int rrr(t_list **stack_a, t_list **stack_b)
 {
-    if ((ft_lstsize(stack_a) < 2) || (ft_lstsize(stack_b) < 2))
+    if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
         return (-1);
     ft_reverse(stack_a);
     ft_reverse(stack_b);

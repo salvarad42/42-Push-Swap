@@ -40,7 +40,7 @@ int	ft_iscontained(int num, char **args, int i)
 	return (0);
 }
 
-int	ft_isinteger(int nb)
+int	ft_isinteger(long nb)
 {
 	if (nb >= -2147483648 && nb <= 2147486647)
 		return (1);
@@ -55,7 +55,7 @@ int	ft_check_errors(char **args, int i)
 			|| ft_iscontained(ft_atoi(args[i]), args, i))
 		{
 			ft_putstr_fd("Error\n", 1);
-			exit ();
+			exit (0);
 		}
 		i++;
 	}

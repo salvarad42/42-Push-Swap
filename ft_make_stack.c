@@ -33,23 +33,22 @@ t_list	*ft_lstlast(t_list *stack)
 	return (stack);
 }
 
-void	ft_lstadd_back(t_list *stack, t_list *new_stack)
+void	ft_lstadd_back(t_list **stack, t_list *new_stack)
 {
 	t_list	*aux;
 
-	if (stack == NULL)
-		stack = new_stack;
-	else
+	if (*stack)
 	{
-		aux = ft_lstlast(stack);
+		aux = ft_lstlast(*stack);
 		aux -> next = new_stack;
 	}
+	else
+		*stack = new_stack;
 }
 
-static void	ft_make_stack(t_list *stack, char **args)
+void	ft_make_stack(t_list **stack, char **args)
 {
 	t_list	*new_stack;
-	char	**args;
 	int		i;
 
 	i = 0;
@@ -59,5 +58,5 @@ static void	ft_make_stack(t_list *stack, char **args)
 		ft_lstadd_back(stack, new_stack);
 		i++;
 	}
-	ft_index_stack(stack);
+	ft_index_stack(*stack);
 }

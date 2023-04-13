@@ -15,25 +15,20 @@
 int	ft_lstsize(t_list *stack)
 {
 	int		i;
-	t_list	*aux;
 
-	aux = stack;
 	i = 0;
-	while (aux)
+	while (stack)
 	{
-		aux = aux -> next;
+		stack = stack -> next;
 		i++;
 	}
 	return (i);
 }
 
-static void	ft_sort_stack(t_list *stack_a)
+void	ft_sort_stack(t_list **stack)
 {
-	t_list	*stack_b;
-
-	stack_b = NULL;
-	if (ft_lstsize(stack_a) <= 5)
-		ft_simple_sort(stack_a, stack_b);
+	if (ft_lstsize(*stack) <= 5)
+		ft_simple_sort(stack);
 	else
-		ft_radix_sort(stack_a, stack_b);
+		ft_radix_sort(stack);
 }
