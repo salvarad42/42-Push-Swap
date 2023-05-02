@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: salvarad <salvarad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:51:24 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/27 16:55:02 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/05/02 23:46:46 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	ft_push(t_list **stack_dst, t_list **stack_src)
 {
 	t_list	*aux;
-	
+
 	if (ft_lstsize(*stack_src) == 0)
 		return (-1);
 	if (!stack_dst)
 	{
 		*stack_dst = *stack_src;
-		(*stack_dst) -> next = NULL;
-		*stack_src = (*stack_src) -> next;
+		(*stack_dst)->next = NULL;
+		*stack_src = (*stack_src)->next;
 	}
 	else
 	{
-		aux = (*stack_src) -> next;
-		(*stack_src) -> next = *stack_dst;
+		aux = (*stack_src)->next;
+		(*stack_src)->next = *stack_dst;
 		*stack_dst = *stack_src;
 		*stack_src = aux;
 	}

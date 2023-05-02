@@ -24,7 +24,7 @@ typedef struct s_list
 }	t_list;
 
 char		**ft_check_args(int argc, char **argv);
-int			ft_check_errors(char **args, int i);
+int			ft_check_errors(char **args);
 void		ft_free_args(char **array);
 void		ft_free_stack(t_list *stack);
 void		ft_index_stack(t_list *stack);

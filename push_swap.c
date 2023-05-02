@@ -16,13 +16,13 @@ void	push_swap(int argc, char **args, t_list **stack)
 {
 	if (argc == 2)
 	{
-		ft_check_errors(args, 1);
+		ft_check_errors(args);
 		ft_make_stack(stack, args);
 		ft_free_args(args);
 	}
 	else
 	{
-		ft_check_errors(args, 0);
+		ft_check_errors(args);
 		ft_make_stack(stack, args);
 	}
 	if (ft_is_sorted(*stack))

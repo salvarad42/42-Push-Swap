@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: salvarad <salvarad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:37:23 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/29 17:39:17 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/05/03 01:07:28 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 int	ft_isnum(char *num)
 {
 	int	i;
+
+	if (num == NULL
+		|| num[0] == '\0'
+		|| (ft_strlen(num) == 1 && num[0] == '-'))
+		return (0);
 
 	i = 0;
 	if (num[0] == '-')
@@ -40,21 +45,30 @@ int	ft_iscontained(int num, char **args, int i)
 	return (0);
 }
 
-int	ft_isinteger(long nb)
+int	ft_isinteger(char *arg)
 {
-	if (nb >= -2147483648 && nb <= 2147486647)
+	long long	nb;
+
+	if (ft_strlen(arg) > 11)
+		return (0);
+	nb = ft_atoi(arg);
+	if (nb >= -2147483648 && nb <= 2147483647)
 		return (1);
 	return (0);
 }
 
-int	ft_check_errors(char **args, int i)
+int	ft_check_errors(char **args)
 {
-	while (args[i])
+	int	i;
+
+	i = 0;
+	while (args[i] || args[0] == NULL)
 	{
-		if (!ft_isnum(args[i]) || !ft_isinteger(ft_atoi(args[i]))
+		if (!ft_isnum(args[i])
+			|| !ft_isinteger(args[i])
 			|| ft_iscontained(ft_atoi(args[i]), args, i))
 		{
-			ft_putstr_fd("Error\n", 1);
+			ft_putstr_fd("Error\n", STDERR_FILENO);
 			exit (0);
 		}
 		i++;
