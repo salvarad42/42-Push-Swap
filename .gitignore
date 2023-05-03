@@ -2,3 +2,4 @@
 checker
 *.o
 *.a
+.history
