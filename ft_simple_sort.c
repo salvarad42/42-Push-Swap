@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:54:32 by salvarad          #+#    #+#             */
-/*   Updated: 2023/04/24 11:02:44 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:17:23 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void	ft_sort_3(t_list **stack, int pos_min)
 	}
 	else if (pos_min == 1)
 	{
-		if ((*stack) -> index < (*stack) -> next -> next -> index)
+		if ((*stack)-> index < (*stack)-> next -> next -> index)
 			sa(*stack);
 		else
 			ra(stack);
 	}
 	else if (pos_min == 2)
 	{
-		if ((*stack) -> index < (*stack) -> next -> index)
+		if ((*stack)-> index < (*stack)-> next -> index)
 			rra(stack);
 		else
 		{

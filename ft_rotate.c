@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:55:38 by salvarad          #+#    #+#             */
-/*   Updated: 2023/03/27 16:59:33 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:16:40 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_rotate(t_list **stack)
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
 	aux = *stack;
-	*stack = (*stack) -> next;
+	*stack = (*stack)-> next;
 	aux -> next = NULL;
 	ft_lstadd_back(stack, aux);
 	return (0);

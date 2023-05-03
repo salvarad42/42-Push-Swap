@@ -6,7 +6,7 @@
 /*   By: salvarad <salvarad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:37:23 by salvarad          #+#    #+#             */
-/*   Updated: 2023/05/03 01:07:28 by salvarad         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:40:49 by salvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_isnum(char *num)
 		|| num[0] == '\0'
 		|| (ft_strlen(num) == 1 && num[0] == '-'))
 		return (0);
-
 	i = 0;
 	if (num[0] == '-')
 		i++;
@@ -48,8 +47,12 @@ int	ft_iscontained(int num, char **args, int i)
 int	ft_isinteger(char *arg)
 {
 	long long	nb;
+	int			i;
 
-	if (ft_strlen(arg) > 11)
+	i = 0;
+	while (arg[i] == '0')
+		i++;
+	if (ft_strlen(&arg[i]) > 11)
 		return (0);
 	nb = ft_atoi(arg);
 	if (nb >= -2147483648 && nb <= 2147483647)
